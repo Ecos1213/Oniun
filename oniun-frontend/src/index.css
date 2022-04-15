@@ -372,3 +372,14 @@ template {
   background-color: #0093a2;
   color: #7fc7ce;
 }
+
+.center-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.roboto-style {
+  font-family: 'Roboto';
+  font-weight: 500;
+}

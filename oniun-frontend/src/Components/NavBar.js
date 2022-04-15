@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import ImageProfile from '../images/profile-image.png';
 // import logo from '../images/logo.svg';
 import './styles/NavBar.css'
 //style="width:25%"
@@ -7,7 +8,7 @@ class NavBar extends Component {
     render(){
         return(
             <div className="dashboard-sidebar" >
-                <h3>Menu</h3>
+                <img src={ImageProfile} className="image-profile" alt="imagen de perfil"/>
                 <nav className='links-content'>
                     <NavLink 
                         to="/store"

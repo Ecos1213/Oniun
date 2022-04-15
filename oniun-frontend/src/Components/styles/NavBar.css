@@ -24,3 +24,13 @@
     margin-right: 7px;
     margin-bottom: 2px;
 }
+
+.image-profile {
+    margin: 13px auto 39px auto;
+    display: block;
+}
+
+.topbar-img {
+    background-color: #008F9D;
+    height: 53px;
+}

@@ -13,3 +13,11 @@
     height: 90%;
     border-radius: 10px;
 }
+
+.text-development {
+    font-size: 15px;
+    line-height: 18px;
+    width: 100%;
+    max-width: 361px;
+    text-align: center;
+}

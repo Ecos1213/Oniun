@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Login from '../Components/Login'
 import PageLoading from './PageLoading';
+import OniLogimg from '../Components/OniLogimg';
 import './styles/Home.css';
-import oniunLogin from '../images/oniun-login.png';
 import { useNavigate } from "react-router-dom";
 
 /**
@@ -80,7 +80,7 @@ class Home extends Component {
 
     componentDidMount() {
         if(window.sessionStorage.getItem("key")) {
-            this.props.navigation('/store')
+            //this.props.navigation('/store')
         }
     }
 
@@ -91,7 +91,7 @@ class Home extends Component {
 
         return(
             <div className='container-fluid center-block-column'>
-                <img src={oniunLogin} alt='Oniun sistemas' className='oniun-img'/>
+                <OniLogimg />
                 <Login 
                     handleSubmit={this.handleSubmit}
                     handleChange={this.handleChange}
@@ -102,7 +102,7 @@ class Home extends Component {
         )
     }
 }
-// Wrap and export
+
 export default function(props) {
     const navigation = useNavigate();
     return <Home {...props} navigation={navigation} />;
