@@ -1,0 +1,131 @@
+.register-container{
+    max-width: 528px;
+    width: 100%;
+    max-height: 483px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-right: -22px;
+}
+
+.form-register-container {
+    margin-top: 41px;
+    margin-bottom: 41px;
+    margin-left: 31px;
+    margin-right: 29px;
+}
+
+.content-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 19px;
+}
+
+.button-register {
+    background-color: #0098A7;
+    border: 1px solid #0098A7;
+    border-radius: 3px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 32px;
+    max-width: 270px;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 13px;
+    cursor: pointer;
+}
+
+.input-search {
+    font-size: 15px;
+    line-height: 18px;
+    color: #A6A6A6;
+    background-color: #EFEFEF;
+    border: 1px solid #D4D4D4;
+    border-radius: 3px;
+    width: 100%;
+    height: 28px;
+    padding-left: 7px;
+    margin-bottom: 13px;
+}
+
+.input-fullname, .input-lastname {
+    max-width: 226px;
+}
+
+.input-registerEmail, .input-registerPassword{
+    max-width: 454px;
+}
+
+.input-registerPassword {
+    margin-bottom: 51px;
+}
+
+.text-registeraccount {
+    font-size: 29px;
+    line-height: 34px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.subtext-registeraccount {
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.subtext-register-birthdate{
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    margin-bottom: 9px;
+    margin-top: 0px;
+}
+
+/*cambio del select box*/
+.box-day, .box-month, .box-year {
+    background-color: #EFEFEF;
+    border: 1px solid #D4D4D4;
+    border-radius: 3px;
+    position: relative;
+    height: 32px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #A6A6A6;
+}
+
+/*cambio de icono del select box*/
+.box-day::-ms-expand {
+    display: none;
+}
+
+
+.box-day, .box-month, .box-year {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.96397 6.96771L12.8081 1.12165C13.064 0.865127 13.064 0.44952 12.8081 0.192351C12.5522 -0.0641704 12.1366 -0.0641704 11.8807 0.192351L6.50032 5.57471L1.11991 0.193C0.864032 -0.0635219 0.448426 -0.0635219 0.191905 0.193C-0.0639687 0.449521 -0.0639687 0.865775 0.191905 1.1223L6.03597 6.96836C6.2892 7.22094 6.71134 7.22094 6.96397 6.96771Z' fill='%23929292'/%3E%3C/svg%3E%0A");
+    background-position:90%;
+    background-repeat: no-repeat;
+    padding-left: 5px;
+}
+/*END*/
+
+.box-day{
+    width: 55px;
+}
+
+.box-month, .box-year {
+    width: 59px;
+}
+
+.register-hr{
+    border: 1px solid #D4D4D4;
+    margin-top: 22px;
+    margin-bottom: 28px;
+}
+
+.custom-gap-selectbox {
+    gap: 8px;
+}

@@ -25,6 +25,11 @@ class Home extends Component {
         }
     };
 
+    constructor(props) {
+        super(props);
+        this.idTimeOut = "";
+    }
+
     handleSubmit = async e => {
         e.preventDefault();
         this.setState({
@@ -48,19 +53,20 @@ class Home extends Component {
     
             await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
             .then(response => response.json())
-            .then((rest)=> {
+            .then(async (rest)=> {
                 if(rest.isRegistred){
                     this.setState({
                         loading: false,
                         errorMessage: ""
                     });
-                    window.sessionStorage.setItem("key", true);
+                    await window.localStorage.setItem("key", true);
+                    this.props.navigation('/store');
                 }else {
                     this.setState({
                         loading: false,
                         errorMessage: rest.message
                     });
-                    window.sessionStorage.removeItem("key");
+                    await window.localStorage.removeItem("key");
                 }
             }).catch((e)=>{
                 console.log("[ERROR LOGIN]", e.message)
@@ -79,9 +85,20 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        if(window.sessionStorage.getItem("key")) {
-            //this.props.navigation('/store')
+        console.log(window.localStorage.getItem("key"));
+        if(window.localStorage.getItem("key")) {
+            this.setState({
+                loading: false,
+                errorMessage: ""
+            });
+            this.idTimeOut = setTimeout(() => {
+                this.props.navigation('/store')
+             }, 1);
         }
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.idTimeOut);
     }
 
     render() {

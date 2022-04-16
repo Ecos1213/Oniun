@@ -1,16 +1,22 @@
 import React, {Component} from 'react';
-import SearchUser from '../Components/SearchUser';
-import OniLogimg from '../Components/OniLogimg';
-import './styles/ResetPassword.css';
+import RegisterUser from '../Components/RegisterUser';
+import OniRegimg from '../Components/OniRegimg';
+import './styles/CreateAccount.css';
 
-class ResetPassword extends Component {
+class CreateAccount extends Component {
 
     state = {
         loading: false,
         error: null,
         errorMessage: "",
         form: {
-            email: ''
+            registerEmail: '',
+            registerPassword: '',
+            fullname: '',
+            lastname: '',
+            day: '',
+            month: '',
+            year: ''
         }
     };
 
@@ -29,9 +35,9 @@ class ResetPassword extends Component {
 
     render() {
         return(
-            <div className='container-fluid center-block-column'>
-                <OniLogimg />
-                <SearchUser
+            <div className='container-fluid center-block-column container-horizontal'>
+                <OniRegimg />
+                <RegisterUser
                     handleSubmit={this.handleSubmit} 
                     formValues={this.state.form}
                     handleChange={this.handleChange}
@@ -43,4 +49,4 @@ class ResetPassword extends Component {
 }
 
 
-export default ResetPassword;
+export default CreateAccount;

@@ -363,6 +363,12 @@ template {
   font-weight: 500;
 }
 
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Regular.ttf')  format('truetype');
+  font-weight: 400;
+}
 .active {
   background-color: #0098A7;
   color: #fff;
@@ -382,4 +388,17 @@ template {
 .roboto-style {
   font-family: 'Roboto';
   font-weight: 500;
+}
+
+.roboto-regular {
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  width: 100%;
+  max-width: 465px;
 }
