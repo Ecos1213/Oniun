@@ -51,7 +51,7 @@ class Home extends Component {
                 body: dataForm
             };
     
-            await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+            await fetch('http://localhost/Oniun/PHP/index.php', requestOptions)
             .then(response => response.json())
             .then(async (rest)=> {
                 if(rest.isRegistred){
@@ -85,7 +85,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        //console.log(window.localStorage.getItem("key"));
+        //console.log(window.localStorage.removeItem("key"));
         if(window.localStorage.getItem("key")) {
             this.setState({
                 loading: false,

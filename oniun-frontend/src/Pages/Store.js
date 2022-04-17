@@ -180,7 +180,7 @@ class Store extends Component {
                 body: dataForm
             };
     
-            await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+            await fetch('http://localhost/Oniun/PHP/index.php', requestOptions)
                 .then(response => response.json())
                 .then(async (rest)=> {
     
@@ -248,7 +248,7 @@ class Store extends Component {
                 body: dataForm
             };
     
-            await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+            await fetch('http://localhost/Oniun/PHP/index.php', requestOptions)
                 .then(response => response.json())
                 .then(async (rest)=> {
                     this.setState({
@@ -287,7 +287,7 @@ class Store extends Component {
             body: dataForm
         };
 
-        await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+        await fetch('http://localhost/Oniun/PHP/index.php', requestOptions)
             .then(response => response.json())
             .then(async (rest)=> {
                 this.setState({
@@ -438,7 +438,7 @@ class Store extends Component {
             body: dataForm
         };
 
-        await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+        await fetch('http://localhost/Oniun/PHP/index.php', requestOptions)
             .then(response => response.json())
             .then(async (rest)=> {
 
