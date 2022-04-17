@@ -130,7 +130,7 @@ const EditProduct = (props) => {
                             </div>
                         </div>
 
-                        
+                        {props.errorMessage ? <p className='error-reg-message roboto-style'>Porfavor digite todos los campos requeridos</p> : ""}
                     </div>
                     <hr className='save-hrborder hr-borderedit' />
                     <button type="submit" className='roboto-style save-green'>

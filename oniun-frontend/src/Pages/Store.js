@@ -54,8 +54,10 @@ class Store extends Component {
             editReferencia: '', 
             editDescripcionrapida: '',
             editUrlfabricante: '',
-            editDescripciondetallada: ''
-        }
+            editDescripciondetallada: '',
+           
+        },
+        requiredMessage: false
     }
 
     handleCancel = e => {
@@ -148,89 +150,125 @@ class Store extends Component {
 
     handleRegisterSubmit = async e => {
         e.preventDefault();
-        const form = {
-            id: this.state.form.id,
-            nameProduct: this.state.form.nameProduct,
-            stock: this.state.form.stock,
-            proveedor: this.state.form.proveedor,
-            referencia: this.state.form.referencia,
-            descripcionrapida: this.state.form.descripcionrapida,
-            urlfabricante: this.state.form.urlfabricante,
-            descripciondetallada: this.state.form.descripciondetallada
-        }
-
-        const dataForm = JSON.stringify(form);
-
-        const requestOptions = {
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: dataForm
-        };
-
-        await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
-            .then(response => response.json())
-            .then(async (rest)=> {
-
-                this.setState({
-                    form: {
-                        ...this.state.form,
-                        nameProduct: '',
-                        stock: '',
-                        proveedor: '',
-                        referencia: '', 
-                        descripcionrapida: '',
-                        urlfabricante: '',
-                        descripciondetallada: ''
-                    },
-                    products: rest.productos,
-                    totalRegisters: rest.productos.length
+        if(
+            this.state.form.nameProduct.length > 0 
+            && this.state.form.stock.length > 0
+            && this.state.form.proveedor.length > 0
+            && this.state.form.referencia.length > 0
+            && this.state.form.descripcionrapida.length > 0
+            && this.state.form.urlfabricante.length > 0
+            && this.state.form.descripciondetallada.length > 0
+        ) {
+            const form = {
+                id: this.state.form.id,
+                nameProduct: this.state.form.nameProduct,
+                stock: this.state.form.stock,
+                proveedor: this.state.form.proveedor,
+                referencia: this.state.form.referencia,
+                descripcionrapida: this.state.form.descripcionrapida,
+                urlfabricante: this.state.form.urlfabricante,
+                descripciondetallada: this.state.form.descripciondetallada
+            }
+    
+            const dataForm = JSON.stringify(form);
+    
+            const requestOptions = {
+                method: 'POST',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: dataForm
+            };
+    
+            await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+                .then(response => response.json())
+                .then(async (rest)=> {
+    
+                    this.setState({
+                        form: {
+                            ...this.state.form,
+                            nameProduct: '',
+                            stock: '',
+                            proveedor: '',
+                            referencia: '', 
+                            descripcionrapida: '',
+                            urlfabricante: '',
+                            descripciondetallada: '',
+                            requiredMessage: false
+                        },
+                        products: rest.productos,
+                        totalRegisters: rest.productos.length
+                    });
+                    
+                    
+                }).catch((e)=>{
+                    console.log("[ERROR BODEGA]", e.message)
                 });
-                
-                
-            }).catch((e)=>{
-                console.log("[ERROR BODEGA]", e.message)
-            });
 
-        this.onHandleClose();
+            this.onHandleClose();
+        }else{
+            console.log("entre");
+            this.setState({
+                requiredMessage: true
+            });
+        }
+        
+
+        
     }
 
     handleEditSubmit = async e => {
         e.preventDefault();
-        const form = {
-            id: this.state.form.id,
-            editNameProduct: this.state.form.editNameProduct,
-            editStock: this.state.form.editStock,
-            editProveedor: this.state.form.editProveedor,
-            editReferencia: this.state.form.editReferencia,
-            editDescripcionrapida: this.state.form.editDescripcionrapida,
-            editUrlfabricante: this.state.form.editUrlfabricante,
-            editDescripciondetallada: this.state.form.editDescripciondetallada
-        }
-        const dataForm = JSON.stringify(form);
-
-        const requestOptions = {
-            method: 'PUT',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: dataForm
-        };
-
-        await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
-            .then(response => response.json())
-            .then(async (rest)=> {
-                this.setState({
-                    selectedProducts: [],
-                    products: rest.productos,
-                    totalRegisters: rest.productos.length
+        if(
+            this.state.form.editNameProduct.length > 0 
+            && this.state.form.editStock.length > 0
+            && this.state.form.editProveedor.length > 0
+            && this.state.form.editReferencia.length > 0
+            && this.state.form.editDescripcionrapida.length > 0
+            && this.state.form.editUrlfabricante.length > 0
+            && this.state.form.editDescripciondetallada.length > 0
+        ) {
+            const form = {
+                id: this.state.form.id,
+                editNameProduct: this.state.form.editNameProduct,
+                editStock: this.state.form.editStock,
+                editProveedor: this.state.form.editProveedor,
+                editReferencia: this.state.form.editReferencia,
+                editDescripcionrapida: this.state.form.editDescripcionrapida,
+                editUrlfabricante: this.state.form.editUrlfabricante,
+                editDescripciondetallada: this.state.form.editDescripciondetallada
+            }
+            const dataForm = JSON.stringify(form);
+    
+            const requestOptions = {
+                method: 'PUT',
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: dataForm
+            };
+    
+            await fetch('http://localhost/proyecto%20entrevista/Oniun/Oniun/PHP/index.php', requestOptions)
+                .then(response => response.json())
+                .then(async (rest)=> {
+                    this.setState({
+                        selectedProducts: [],
+                        products: rest.productos,
+                        totalRegisters: rest.productos.length
+                    });
+                    
+                }).catch((e)=>{
+                    console.log("[ERROR EDIT]", e.message)
                 });
-                
-            }).catch((e)=>{
-                console.log("[ERROR EDIT]", e.message)
+            this.onHandleClose();
+        }else{
+            console.log("entre");
+            this.setState({
+                requiredMessage: true
             });
-        this.onHandleClose();
+        }
+        
+        
     }
 
     handleDeleteSubmit = async e => {
@@ -278,7 +316,7 @@ class Store extends Component {
         }
 
         let arraySearch=  this.state.products.filter(
-            (element)=> element.nombreproducto.includes(e.target.value) || element.descripciondetallada.includes(e.target.value)
+            (element)=> element.nombreproducto.toLowerCase().includes(e.target.value.toLowerCase()) || element.descripciondetallada.toLowerCase().includes(e.target.value.toLowerCase())
         );
 
         if(e.target.value.length > 0) {
@@ -343,7 +381,8 @@ class Store extends Component {
                 editDescripcionrapida: '',
                 editUrlfabricante: '',
                 editDescripciondetallada: ''
-            }
+            },
+            requiredMessage: false
         })
     }
 
@@ -421,7 +460,9 @@ class Store extends Component {
         const { currentPage, todosPerPage } = this.state;
 
         // Logic for displaying current todos
+        //2 * 10 = 20
         const indexOfLastTodo = currentPage * todosPerPage;
+        //20 - 10 = 10
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
 
         // Logic for displaying page numbers
@@ -522,6 +563,7 @@ class Store extends Component {
                     formValues={this.state.form}
                     handleRegisterSubmit={this.handleRegisterSubmit}
                     handleChange={this.handleChange}
+                    errorMessage={this.state.requiredMessage}
                 />
 
                 <ShowProduct 
@@ -537,6 +579,7 @@ class Store extends Component {
                     selectedProducts={this.state.selectedProducts}
                     handleRegisterSubmit={this.handleEditSubmit}
                     handleChange={this.handleChange}
+                    errorMessage={this.state.requiredMessage}
                 />
 
                 <DeleteProduct 

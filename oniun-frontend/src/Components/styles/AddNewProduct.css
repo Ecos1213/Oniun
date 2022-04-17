@@ -75,3 +75,12 @@
     line-height: 23px;
     color: #EE8600;
 }
+
+.error-reg-message {
+    margin: 0;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 4px;
+    margin-top: -5px;
+}
