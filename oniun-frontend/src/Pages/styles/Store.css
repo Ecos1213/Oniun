@@ -47,3 +47,49 @@
     color: #FFFFFF;
     cursor: pointer;
 }
+
+.width-stock {
+    width: 100px;
+}
+
+.width-option {
+    width: 200px;
+}
+
+.default-products {
+    width: 100%;
+    border-collapse:collapse;
+}
+
+.header-table {
+    font-size: 15px;
+    line-height: 18px;
+    background-color: #0098A7;
+    text-align: left;
+}
+
+.padding-th {
+    padding: 8px 0px 7px 25px;
+}
+
+.border-th{
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.lastPagination {
+    margin-left: 22px;
+}
+
+.nextPagination {
+    margin-left: 10px;
+}
+
+.backPagination {
+    margin-right: 10px;
+}
+
+.firstPagination {
+    margin-right: 22px;
+    margin-bottom: 3px;
+}

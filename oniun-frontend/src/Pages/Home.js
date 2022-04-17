@@ -85,7 +85,7 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        console.log(window.localStorage.getItem("key"));
+        //console.log(window.localStorage.getItem("key"));
         if(window.localStorage.getItem("key")) {
             this.setState({
                 loading: false,

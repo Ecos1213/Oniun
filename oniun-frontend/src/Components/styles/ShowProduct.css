@@ -1,9 +1,3 @@
-.description-detail-text {
-    font-size: 17px;
-    line-height: 20px;
-    color: #807A7A;
-}
-
 .input-descripciondetallada {
     max-width: 469px;
     resize: none;
@@ -14,7 +8,7 @@
     width: 100%;
     height: 154px;
     padding-left: 7px;
-    margin-bottom: 13px;
+    margin-bottom: 17px;
     font-size: 15px;
     line-height: 18px;
 }
@@ -50,14 +44,6 @@
 .input-proveedor,
 .input-referencia {
     margin-bottom: 23px;
-}
-
-.custom-max-width {
-    max-width: 100%;
-}
-
-.width-50{
-    width: 50%;
 }
 
 .custom-gap-showproducts {

@@ -1,0 +1,43 @@
+.topSelectPerPage {
+    display: flex;
+    background: #D6D6D6;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-top: 21px;
+    height: 59px;
+    align-items: center;
+}
+
+.selectPerPage{
+    width: 54px;
+    height: 37px;
+    background: #F5F5F5;
+    border: 1px solid #B8B8B8;
+    border-radius: 4px;
+    margin-left: 25px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #989898;
+}
+
+.selectPerPage::-ms-expand {
+    display: none;
+}
+
+
+.selectPerPage {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.96397 6.96771L12.8081 1.12165C13.064 0.865127 13.064 0.44952 12.8081 0.192351C12.5522 -0.0641704 12.1366 -0.0641704 11.8807 0.192351L6.50032 5.57471L1.11991 0.193C0.864032 -0.0635219 0.448426 -0.0635219 0.191905 0.193C-0.0639687 0.449521 -0.0639687 0.865775 0.191905 1.1223L6.03597 6.96836C6.2892 7.22094 6.71134 7.22094 6.96397 6.96771Z' fill='%23929292'/%3E%3C/svg%3E%0A");
+    background-position:90%;
+    background-repeat: no-repeat;
+    padding-left: 5px;
+}
+
+.text-totalregisters{
+    font-size: 15px;
+    line-height: 18px;
+    color: #515151;
+    margin-left: 20px;
+}

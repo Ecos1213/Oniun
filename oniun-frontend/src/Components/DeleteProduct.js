@@ -1,21 +1,27 @@
 import React from 'react';
-
 import Modal from './Modal';
-// todo estos componentes que contienen componentes es por que asi podemos modificar
-// o colocar mas contenido o funciones a este modal y asi poder hacer una mejor composicion
+import './styles/DeleteProduct.css';
+
 const DeleteProduct = (props) => {
-    console.log(props)
+
     return (
-        <Modal isOpenModal={props.isOpen} onClose={props.onClose} > 
-        
+        <Modal 
+            isOpenModal={props.isOpen} 
+            onClose={props.onClose} 
+            width={"469px"} 
+            height={"221px"}
+            title={"Atencion"}
+        > 
+            <hr className='save-hrborder' />
             <div className="DeleteBadgeModal">
-                <h1>
-                    Are you sure?
-                </h1>
-                <p>You are about delete this badge.</p>
+               
+                <p className='roboto-style message-delete-text'>¿está seguro de eliminar?</p>
 
-                <div>
+                <hr className='save-hrborder' />
 
+                <div className='delete-buttons-container'>
+                    <button onClick={props.Delete} className='delete-button roboto-style'>Eliminar</button>
+                    <button onClick={props.Cancel} className='no-delete-button roboto-style'>Cancelar</button>
                 </div>
             </div>
         </Modal>

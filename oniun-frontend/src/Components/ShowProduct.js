@@ -4,8 +4,8 @@ import './styles/ShowProduct.css';
 // todo estos componentes que contienen componentes es por que asi podemos modificar
 // o colocar mas contenido o funciones a este modal y asi poder hacer una mejor composicion
 const ShowProduct = (props) => {
-    console.log(props.selectedProducts)
-    let id, descripciondetallada, descripcionrapida, disponible, nombreproducto, proveedor, referencia, url;
+
+    let descripciondetallada, disponible, nombreproducto, proveedor, referencia;
 
     if(typeof props.selectedProducts[0] !== 'undefined') {
         // id = props.selectedProducts[0].id;
@@ -18,13 +18,17 @@ const ShowProduct = (props) => {
     }
 
     return (
-        <Modal isOpenModal={props.isOpen} onClose={props.onClose} width={"469px"} height={"450px"}> 
+        <Modal 
+            isOpenModal={props.isOpen} 
+            onClose={props.onClose} 
+            width={"469px"} 
+            height={"442px"}
+            title={"Descripción detallada"}
+        > 
         
             <div className="">
-                <h1 className='description-detail-text roboto-style'>
-                    Descripción detallada
-                </h1>
-                <hr />
+                
+                <hr className='save-hrborder' />
 
                 <div>
                     <div className='input-group custom-max-width custom-gap-showproducts'>
@@ -86,7 +90,7 @@ const ShowProduct = (props) => {
                         </div>
                     </div>
                 </div>
-                <hr />
+                <hr className='save-hrborder' />
             </div>
         </Modal>
     );

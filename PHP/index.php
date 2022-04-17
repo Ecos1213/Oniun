@@ -25,5 +25,76 @@
         $regis=json_encode($products);
         print_r($regis);
     }
-   
+
+    if(
+        isset($decoded["nameProduct"]) AND 
+        isset($decoded["stock"]) AND 
+        isset($decoded["proveedor"]) AND 
+        isset($decoded["referencia"]) AND 
+        isset($decoded["descripcionrapida"]) AND 
+        isset($decoded["urlfabricante"]) AND 
+        isset($decoded["descripciondetallada"]) 
+    ) {
+        $store = new Store();
+        $products= $store->registreProduct(
+            $decoded["nameProduct"],
+            $decoded["stock"],
+            $decoded["proveedor"],
+            $decoded["referencia"],
+            $decoded["descripcionrapida"],
+            $decoded["urlfabricante"],
+            $decoded["descripciondetallada"]
+        );
+
+        if($products) {
+            $allProducts= $store->getAllProducts();
+            $regis=json_encode($allProducts);
+            print_r($regis);
+        }
+    }
+
+    if(
+        isset($decoded["id"]) AND 
+        isset($decoded["editNameProduct"]) AND 
+        isset($decoded["editStock"]) AND 
+        isset($decoded["editProveedor"]) AND 
+        isset($decoded["editReferencia"]) AND 
+        isset($decoded["editDescripcionrapida"]) AND 
+        isset($decoded["editUrlfabricante"]) AND 
+        isset($decoded["editDescripciondetallada"])
+    )
+    {
+        $store = new Store();
+        $products= $store->updateProduct(
+            $decoded["id"],
+            $decoded["editNameProduct"],
+            $decoded["editStock"],
+            $decoded["editDescripcionrapida"],
+            $decoded["editReferencia"],
+            $decoded["editProveedor"],
+            $decoded["editDescripciondetallada"],
+            $decoded["editUrlfabricante"]
+        );
+        if($products) {
+            $allProducts= $store->getAllProducts();
+            $regis=json_encode($allProducts);
+            print_r($regis);
+        }
+    }
+
+    if(
+        isset($decoded["id"]) AND 
+        isset($decoded["isDelete"])
+    ){
+
+        $store = new Store();
+        $products= $store->deleteProduct($decoded["id"]);
+        if($products) {
+            $allProducts= $store->getAllProducts();
+            $regis=json_encode($allProducts);
+            print_r($regis);
+        }
+        
+        
+    }
 ?>

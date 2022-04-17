@@ -1,0 +1,67 @@
+.button-detalle{
+    background: #008FCC;
+    border-radius: 4px;
+    color: #fff;
+    border: 0px;
+    width: 100%;
+    max-width: 78px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.button-editar{
+    background: #3C9462;
+    border-radius: 4px;
+    color: #fff;
+    border: 0px;
+    width: 100%;
+    max-width: 78px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.button-eliminar{
+    background: #E83E22;
+    border-radius: 4px;
+    color: #fff;
+    border: 0px;
+    width: 100%;
+    max-width: 78px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.button-link {
+    background-color: #0098A7;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 18px;
+    height: 27px;
+    width: 100%;
+    border-radius: 3px;
+    max-width: 78px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.content-buttons-options{
+    display: flex;
+    justify-content: space-between;
+}
+
+.padding-td {
+    padding: 8px 25px 7px 25px;
+}
+
+.border-td{
+    border-bottom: 1px solid #AEAEAE;
+    border-right: 1px solid #AEAEAE;
+}
+
+.border-td-last{
+    border-bottom: 1px solid #AEAEAE;
+}
+

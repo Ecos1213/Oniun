@@ -16,16 +16,28 @@
     position: relative;
     /* top: 10rem; */
     background-color: #ffffff;
-    padding: 17px 22px 25px 19px;
+    padding: 17px 22px 0px 19px;
     width: 100%;
     border-radius: 10px;
 }
   
 .Modal__close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
-    background-color: #F5F5F5;
-    padding: 0.5rem 1rem;
+    height: auto;
+    padding: 0px;
+    background-color: #fff;
+    border: 0px;
+    cursor: pointer;
+}
+
+.Modal-title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description-detail-text {
+    font-size: 17px;
+    line-height: 20px;
+    color: #807A7A;
 }

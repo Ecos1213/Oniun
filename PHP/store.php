@@ -53,5 +53,71 @@
                 return $this->resp_message;
             }
         }
+
+        public function registreProduct(
+            $nameProduct,
+            $stock,
+            $proveedor,
+            $referencia,
+            $descripcionrapida,
+            $urlfabricante,
+            $descripciondetallada
+        ) {
+
+            $mysqli = new mysqli("localhost", "root", "", "oniun");
+            if ($mysqli->connect_errno) {
+                $this->resp_message["error"] = true;
+                $this->resp_message["message"] = $mysqli->connect_error;
+                return $this->resp_message;
+            }
+
+            if ($resultado = $mysqli->query("INSERT INTO 
+            `products` (`nombreproducto`, `disponible`, `descripcionrapida`, `referencia`, `proveedor`, `descripciondetallada`, `url`) 
+            VALUES ('".$nameProduct."', '".$stock."', '".$descripcionrapida."', '".$referencia."', '".$proveedor."', '".$descripciondetallada."', '".$urlfabricante."');")) 
+            { 
+                return $resultado;
+
+            }
+
+            $mysqli->close();
+
+
+        }
+
+        public function updateProduct(
+            $id,
+            $nameProduct,
+            $stock,
+            $descripcionrapida,
+            $referencia,
+            $proveedor,
+            $descripciondetallada,
+            $urlfabricante
+        ) {
+            $mysqli = new mysqli("localhost", "root", "", "oniun");
+            if ($resultado = $mysqli->query("UPDATE `products` SET 
+            `nombreproducto` = '".$nameProduct."', 
+            `disponible` = '".$stock."', 
+            `descripcionrapida` = '".$descripcionrapida."', 
+            `referencia` = '".$referencia."', 
+            `proveedor` = '".$proveedor."', 
+            `descripciondetallada` = '".$descripciondetallada."', 
+            `url` = '".$urlfabricante."' 
+            WHERE `products`.`id` = ".$id.";")) 
+            { 
+                return $resultado;
+
+            }            
+            
+        }
+
+        public function deleteProduct($id){
+            $mysqli = new mysqli("localhost", "root", "", "oniun");
+            if ($resultado = $mysqli->query("DELETE FROM `products` WHERE `products`.`id` = ".$id.";" )) 
+            { 
+                return $resultado;
+
+            }     
+        }
     }
 ?>
